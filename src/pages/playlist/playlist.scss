@@ -1,0 +1,101 @@
+page-playlist {
+    .container-videos {
+        > :not(:last-child) {
+            padding-bottom: 15px;
+        }
+
+        .video-box {
+            display: flex;
+            flex-direction: row;
+            flex-basis: content;
+            
+            > :not(:last-child) {
+                margin-right: 10px;
+            }
+
+            img {
+                width: 40vw;
+                contain: none;
+                align-self: flex-start;
+            }
+
+            .info {
+                flex-grow: 1;
+                
+                h2 {
+                    font-size: 12pt;
+                    margin: 0 0 5px 0;
+                    font-weight: normal;
+                }
+                p {
+                    color: #7d7d7d;
+                    font-size: 10pt;
+                    margin: 0;
+
+                    > span {
+                        display: inline-block;
+
+                        &.points {
+                            border-radius: 2px;
+                            padding: 3px 3px 1px 3px;
+                            background-color: map-get($colors, primary);
+                            font-size: 9pt;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            button {
+                padding: 0px 10px 5px 10px;
+                font-size: 15pt;
+                color: #3a3a3a;
+                background-color: transparent;
+        
+                box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+        }
+    }
+    .playlist-Banner{
+        position: relative;
+        background-color: map-get($colors, secondary );
+        height: 8vh;
+        p{
+            position: absolute;
+            left: 3vh;
+            font-size: 4vh;
+            margin: 0;
+            top: 2vh;
+            font-weight: 300;
+            letter-spacing: 3vw;
+        }
+        
+        .playbutton{
+            z-index: 1;
+            max-height: 119px;
+            max-width: 119px;
+            position: absolute;
+            right: 28px;
+            bottom: -22px;
+            height: 15vw;
+            width: 15vw;
+            font-size: 5.5vw;
+            text-align: center;
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+            border-radius: 50%;
+            background-color: map-get($colors,primary );
+            color: white;
+            ion-icon{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                height: 6vw;
+                width: 6vw;
+            }
+        }
+    }
+}

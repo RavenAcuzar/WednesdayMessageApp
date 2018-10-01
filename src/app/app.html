@@ -1,14 +1,16 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-    <ion-list>
+  
+  <ion-content padding>
+    <div style="text-align: center;"><img src="assets/imgs/Wed-Message.png" style="width: 44vw; padding-top: 5vw; padding-bottom: 5vw;"/></div>
+    <ion-list no-lines class="side-menu-items">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+        <ion-icon [name]="p.icon" item-left></ion-icon>{{p.title}}
+      </button>
+      <button menuClose ion-item class="menuItems" (click)="logoutAlert()" [hidden]="!appState"> <!-- put global boolean login variable here -->
+        <ion-icon name="md-log-out" item-left></ion-icon>Logout
+      </button>
+      <button menuClose ion-item class="menuItems" (click)="login()" [hidden]="appState"> <!-- put global boolean login variable here -->
+        <ion-icon name="md-log-in" item-left></ion-icon>Login
       </button>
     </ion-list>
   </ion-content>

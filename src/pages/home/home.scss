@@ -1,3 +1,43 @@
 page-home {
-
+   .latest-vid{
+        background-color: #e0e1e0;
+        padding-bottom: 1px;
+        box-shadow: 0px 3px 9px rgba(0,0,0,0.3);
+    }
+    .latest-img{
+        position: relative;
+        img{
+            width: 100vw;
+        }
+        p{
+            position: absolute;
+            top: 12px;
+            color: white;
+            background-color: rgba(255, 0, 0, 0.78);
+            padding: 10px;
+            padding-left: 20px;
+            font-weight: bold;
+            font-size: 17px;
+            margin: 0;
+        }
+        ion-icon{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 16vw;
+            font-size: 10vh;
+            width: 12vw;
+            color: rgba(255, 255, 255, 0.47058823529411764);
+        }
+        ion-badge{
+            position: absolute;
+            right: 11px;
+            bottom: 10px;
+            color: #3a3939;
+            background-color: rgba(224, 225, 224, 0.68);
+        }
+    }
 }

@@ -1,0 +1,76 @@
+<!--
+  Generated template for the NowPlayingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <iframe ion-fixed #videoPlayer class="videoPlayer" [class.fullscreen]="isVideoFullscreen" [src]="safeVideoUrl" allowfullscreen
+    webkitallowfullscreen mozallowfullscreen (load)="loaded()"></iframe>
+  <div *ngIf="videoDetails" style="display: inline-block;">
+    <div no-padding *ngIf="!isVideoFullscreen" #content>
+      <div class="vid-playlist" *ngIf="shouldPlayPlaylist">
+        <button (click)="playPrevVideo()" [disabled]="!hasPreviousVideoInPlaylist()">
+          <ion-icon class="icon" name="md-skip-backward"></ion-icon>
+        </button>
+        <button (click)="viewPlaylist()" class="small-icon">
+          <ion-icon class="icon" name="md-arrow-dropdown" *ngIf="!isDisplayingPlaylist"></ion-icon>
+          <ion-icon class="icon" name="md-arrow-dropup" *ngIf="isDisplayingPlaylist"></ion-icon>
+        </button>
+        <button (click)="playNextVideo()" [disabled]="!hasNextVideoInPlaylist()">
+          <ion-icon class="icon" name="md-skip-forward"></ion-icon>
+        </button>
+      </div>
+      <div class="container-videos vid-playlist-videos" [hidden]="!isDisplayingPlaylist">
+        <div class="video-box" [class.now-playing]="videoId === pv.bcid" *ngFor="let pv of playlistVideoDetails; let idx = index">
+          <div class="info" (click)="playVideoInPlaylist(idx)">
+            <h4 *ngIf="videoId === pv.bcid">Now playing</h4>
+            <h2>{{pv.title}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="vid-header">
+        <div class="vid-info">
+          <h1>{{videoDetails.title}}</h1>
+        </div>
+      </div>
+      <div class="vid-description">
+        <ion-icon name="md-globe"></ion-icon>&nbsp;{{videoDetails.language}}
+        <p style="font-size: 12px;">Date Published: {{videoDetails.days}}</p>
+        <p>{{videoDetails.description}}</p>
+      </div>
+      <div class="container-vid-actions">
+        <button ion-button icon-start full (click)="addVideoToPlaylist()" [class.addedToPlaylist]="isVideoAddedToPlaylist" color="light">
+          <ion-icon class="icon" name="md-add"></ion-icon>
+          <span class="text" *ngIf="!isVideoAddedToPlaylist">Add to Playlist</span>
+          <span class="text" *ngIf="isVideoAddedToPlaylist">Added to Playlist</span>
+        </button>
+      </div>
+      <div class="vid-comments" *ngIf="!isLoading">
+        <h4>Comments</h4>
+        <div class="comment-box" *ngIf="isLoggedIn">
+          <img [src]="userImageUrl" />
+          <ion-textarea class="txt-comment" placeholder="Leave a comment" [(ngModel)]="commentContent"></ion-textarea>
+          <button ion-button (click)="commentOnVideo()">Post</button>
+        </div>
+        <div class="container-comments">
+          <div class="comment-box uneditable" *ngFor="let vc of videoComments">
+            <img [src]="vc.mapped.userImageUrl" />
+            <div class="content">
+              <h3>{{vc.CreatedBy}}</h3>
+              <p>{{vc.Comment}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

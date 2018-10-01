@@ -1,0 +1,40 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" color="light"></ion-icon>
+          </button>
+      <ion-title>Search</ion-title>
+    </ion-navbar>
+    <ion-toolbar>
+    <ion-searchbar autofocus
+        [(ngModel)]="keyword" color="light">
+      </ion-searchbar>
+      <ion-buttons right>
+        <button ion-button icon-only (click)='onInput()'>
+          <ion-icon name="md-search" color="light"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <div class="container-videos" *ngFor="let items of SearchResults" [hidden]="hideResults">
+        <div class="video-box">
+          <img [src]="items.image" (click)="playVideo(items.id)"/>
+          <div class="info" (click)="playVideo(items.bcid)">
+            <h2><ion-icon name="lock" color="secondary" [hidden]="items.noLock"></ion-icon> {{items.Title}}</h2>
+            <p>
+              <span class="views">{{items.time}}</span>
+            </p>
+          </div> 
+        </div>
+      </div>
+</ion-content>
