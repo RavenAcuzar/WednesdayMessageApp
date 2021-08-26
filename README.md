@@ -1,6 +1,9 @@
-# ![App Icon](https://github.com/RavenAcuzar/WednesdayMessageApp/blob/master/resources/android/icon/drawable-xhdpi-icon.png) Chief's Wednesday Message Mobile App (OLD Version)
+# ![App Icon](https://github.com/RavenAcuzar/WednesdayMessageApp/blob/master/resources/android/icon/drawable-xhdpi-icon.png) 
+Chief's Wednesday Message Mobile App (OLD Version)
 
 This app offers you all the episodes of Chief Pathman Senathirajah’s weekly Wednesday Message. Reach your true human potential by acting upon the lessons that he regularly shares within the network. Download the app now, and get your weekly dose of valuable networking, and life tips.
+
+Download now on [Google Play](https://play.google.com/store/apps/details?id=net.thev.cwm84214) and [AppStore](https://apps.apple.com/ph/app/chiefs-wednesday-message/id1098484075)
 
 ## Getting Started
 
